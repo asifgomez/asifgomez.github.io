@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-	<meta name="generator" content="Hugo 0.125.7">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -9,22 +8,22 @@
     
     
     
-    <title>Asif Ali</title>
-    <meta name="title" content="Asif Ali" />
-    <meta name="description" content="Here I blog about the things I am currently working on." />
+    <title>Asif Ali | How to Use wxWidgets with Visual Studio 2022</title>
+    <meta name="title" content="Asif Ali | How to Use wxWidgets with Visual Studio 2022" />
+    <meta name="description" content="This post will guide you on how to build wxWidgets from source and use in your project" />
     <meta name="theme-color" content="#0f172a">
 
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://busyasif.dev/" />
-    <meta property="og:title" content="Asif Ali" />
-    <meta property="og:description" content="Here I blog about the things I am currently working on." />
+    <meta property="og:url" content="https://busyasif.dev/posts/how-to-use-wxwidgets-with-visual-studio-2022/" />
+    <meta property="og:title" content="Asif Ali | How to Use wxWidgets with Visual Studio 2022" />
+    <meta property="og:description" content="This post will guide you on how to build wxWidgets from source and use in your project" />
 
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://busyasif.dev/" />
-    <meta property="twitter:title" content="Asif Ali" />
-    <meta property="twitter:description" content="Here I blog about the things I am currently working on." />
+    <meta property="twitter:url" content="https://busyasif.dev/posts/how-to-use-wxwidgets-with-visual-studio-2022/" />
+    <meta property="twitter:title" content="Asif Ali | How to Use wxWidgets with Visual Studio 2022" />
+    <meta property="twitter:description" content="This post will guide you on how to build wxWidgets from source and use in your project" />
 
-    <title>Asif Ali</title>
+    <title>Asif Ali | How to Use wxWidgets with Visual Studio 2022</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
@@ -72,65 +71,83 @@
         document.querySelector('.menu').classList.toggle('open')
     }, false)
 </script><div id="content" class="grow">
-<div class="text-white min-h-[calc(50vh-70px)] min-h-[calc(50dvh-70px)] flex flex-col justify-center">
-  <div class="container mx-auto p-4">
-    <div class="flex flex-col-reverse md:flex-row items-center justify-center lg:gap-16">
-      <div class="text-center">
-        <h1 class="title">Asif Ali</h1>
-        <p class="text-2xl lg:text-3xl">Here I blog about the things I am currently working on.</p>
-      </div>
+<div class="p-4 mt-6 max-w-2xl mx-auto xl:max-w-3xl">
+    <h1 class="text-3xl font-bold mb-4 sm:text-4xl md:text-6xl">How to Use wxWidgets with Visual Studio 2022</h1>
+    <p class="mb-4">
+
+<div class="flex justify-between items-center mb-4">
+    <time datetime="2022-12-12">Dec 12, 2022</time>
+</div></p>
+    <div class="prose prose-invert lg:prose-xl">
+        <p>This post will guide you on how to build wxWidgets from source and use in your project.
+First of all go to <a href="https://www.wxWidgets.org/downloads">wxWidgets.com/downloads</a> and then download the Windows ZIP file from the Source code section.</p>
+<p><img src="/posts/how-to-use-wxwidgets-with-visual-studio-2022/download-wxWidgets-source-for-windows.webp" alt="download wxWidgets source windows"></p>
+<p>Now you can make a folder with the name SDKs (or whatever you prefer) and unzip the downloaded the source code in that folder. If you created the SDKs folder in C drive then right now your path to source code directory would be like this <code>C:\SDKs\wxWidgets-3.2.1</code>. You would see the version you downloaded in place of 3.2.1 . Now double click on <code>build\msw\wx_vc17.sln</code> inside the source code folder and the wxWidgets source would open in the Visual Studio.</p>
+<p>Now we are ready to build the wxWidgets. Click on the build button in the menu bar and then click batch build.</p>
+<p><img src="/posts/how-to-use-wxwidgets-with-visual-studio-2022/wxWidgets-batch-build.png" alt="download wxWidgets source windows"></p>
+<p>Now batch build popup will open up. Click select all and then click build.
+<img src="/posts/how-to-use-wxwidgets-with-visual-studio-2022/wxWidgets-batch-build-popup.png" alt="download wxWidgets source windows"></p>
+<p>Depending upon your hardware build process may take 10-15 minutes. If your build process fails then you can try <code>rebuild</code> button on the batch build popup. Once build is completed we are ready to use the wxWidgets in our project.</p>
+<p><strong>Add wxWidgets folder path as ENV variable</strong></p>
+<p>Now we will add wxWidgets folder path as ENV variable to we do not have to hardcode it in the project. To open environment variables setting use the following steps.
+<img src="/posts/how-to-use-wxwidgets-with-visual-studio-2022/open-env-variable-settings-windows.webp" alt="open environment variable settings in windows"></p>
+<p>Now put WXWIN in the variable name and path to the wxWidgets folder in the variable value
+<img src="/posts/how-to-use-wxwidgets-with-visual-studio-2022/add-env-variable-for-user-windows.webp" alt="open environment variable settings in windows"></p>
+<p><strong>Using the wxWidgets</strong></p>
+<p>Create a new project in the Visual Studio and in the project type select Windows Desktop Application.</p>
+<p><img src="/posts/how-to-use-wxwidgets-with-visual-studio-2022/creating-project-for-wxWidgets.png" alt="download wxWidgets source windows"></p>
+<p>Now in the next step. Provide the name for your project and then click create</p>
+<p><img src="/posts/how-to-use-wxwidgets-with-visual-studio-2022/wxWidgets-project-name-and-create.png" alt="create new project"></p>
+<p>Once the project is opened in the Visual Studio open the .cpp file from the Source files section in solution explorer. File name would have the same name as the project. For example if The project name is HelloWX then file would be HelloWX.cpp</p>
+<p><img src="/posts/how-to-use-wxwidgets-with-visual-studio-2022/open-main-file.webp" alt="open main file"></p>
+<p>Now copy and paste this code in the file you just opened:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#a8a8a8">#include</span> <span style="color:#a8a8a8">&lt;wx/wx.h&gt;</span><span style="color:#a8a8a8">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8a8a8"></span>
+</span></span><span style="display:flex;"><span><span style="color:#b6a0ff">class</span> MyApp <span style="color:#00d3d0">:</span> <span style="color:#b6a0ff">public</span> wxApp
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#b6a0ff">public</span><span style="color:#00d3d0">:</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#b6a0ff">virtual</span> <span style="color:#6ae4b9">bool</span> OnInit();
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#b6a0ff">class</span> MyFrame <span style="color:#00d3d0">:</span> <span style="color:#b6a0ff">public</span> wxFrame
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#b6a0ff">public</span><span style="color:#00d3d0">:</span>
+</span></span><span style="display:flex;"><span>   MyFrame(<span style="color:#b6a0ff">const</span> wxString<span style="color:#00d3d0">&amp;</span> title, <span style="color:#b6a0ff">const</span> wxPoint<span style="color:#00d3d0">&amp;</span> pos, <span style="color:#b6a0ff">const</span> wxSize<span style="color:#00d3d0">&amp;</span> size);
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>wxIMPLEMENT_APP(MyApp);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ae4b9">bool</span> MyApp<span style="color:#00d3d0">::</span>OnInit()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   MyFrame<span style="color:#00d3d0">*</span> frame <span style="color:#00d3d0">=</span> <span style="color:#b6a0ff">new</span> MyFrame(<span style="color:#79a8ff">&#34;Hello World&#34;</span>, wxPoint(<span style="color:#00bcff">50</span>, <span style="color:#00bcff">50</span>), wxSize(<span style="color:#00bcff">450</span>, <span style="color:#00bcff">340</span>));
+</span></span><span style="display:flex;"><span>   frame<span style="color:#00d3d0">-&gt;</span>Show(<span style="color:#f78fe7">true</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#b6a0ff">return</span> <span style="color:#f78fe7">true</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>MyFrame<span style="color:#00d3d0">::</span>MyFrame(<span style="color:#b6a0ff">const</span> wxString<span style="color:#00d3d0">&amp;</span> title, <span style="color:#b6a0ff">const</span> wxPoint<span style="color:#00d3d0">&amp;</span> pos, <span style="color:#b6a0ff">const</span> wxSize<span style="color:#00d3d0">&amp;</span> size)
+</span></span><span style="display:flex;"><span>   <span style="color:#00d3d0">:</span> wxFrame(<span style="color:#f78fe7">NULL</span>, wxID_ANY, title, pos, size)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>After pasting this code you would see the error on <code>#include wx/wx.h</code> line. So now we need to include the wxWidgets files that we compiled earlier into our project.
+Right click on the project name in the solution explorer and then click properties.
+<img src="/posts/how-to-use-wxwidgets-with-visual-studio-2022/open-visual-studio-project-setting.webp" alt="open project setting in visual studio"></p>
+<p>Now under <strong>C/C++</strong> section click on general
+<img src="/posts/how-to-use-wxwidgets-with-visual-studio-2022/open-c-cpp-project-setting-visual-studio.webp" alt="open C/C++ general setting"></p>
+<p>Now in the <strong>Additional include Directories</strong> we&rsquo;ll add the <code>include</code> and <code>include\msvc</code> directories of the wxWidgets which we have build. We will use the <code>WXWIN</code> environment variable that we created earlier. Add this in <code>$(WXWIN)\include; $(WXWIN)\include\msvc</code> in the <strong>Additional include Directories</strong>.
+<img src="/posts/how-to-use-wxwidgets-with-visual-studio-2022/include-wxWidgets.webp" alt="open C/C++ general setting"></p>
+<p>Now open general from <strong>Linker</strong> section.
+<img src="/posts/how-to-use-wxwidgets-with-visual-studio-2022/link-wxWidgets.webp" alt="open Linker setting"></p>
+<p>Add <code>$(WXWIN)\lib\vc_lib</code> in the <strong>Additional include Directories</strong> and click OK button.</p>
+<p>Now the error on <code>#include wx/wx.h</code> line should go away and we are ready to build the project.</p>
+<p>We have included the 32 bit version of wxWidgets in our project, so we need to select <code>x86</code> in the solution platforms.</p>
+<p><img src="/posts/how-to-use-wxwidgets-with-visual-studio-2022/select-x86-in-solution-platforms.webp" alt="Visual Studio change build target ot x86"></p>
+<p>Now to run the project click on <strong>Start Without Debugging</strong> button.</p>
+<p><img src="/posts/how-to-use-wxwidgets-with-visual-studio-2022/run-the-project.webp" alt="Running the project in Visual code without debugging"></p>
+<p>Now you should get an empty window with Hello World in the title bar.</p>
+<p><img src="/posts/how-to-use-wxwidgets-with-visual-studio-2022/wx-hello-world-window.webp" alt="Output of the wxWidgets hello world project"></p>
+<p>If you get the above window on running the project then you have included the wxWidgets into your project correctly.</p>
+
     </div>
-  </div>
 </div>
-
-<div class="container mx-auto p-4">
-  <p class="mb-4 text-xl lg:mt-8 lg:text-2xl">Recent posts</p>
-
-  <div class="md:grid md:gap-6 lg:gap-8 md:grid-cols-2 xl:grid-cols-3">
-    <article
-    class="bg-black rounded-xl shadow-xl p-4 mb-4 lg:p-8 motion-reduce:transition-none transition-transform duration-1000 ease-in-out hover:scale-105">
-    <a href="https://busyasif.dev/posts/leetcode-35-search-insert-position-solution-in-go/">
-        <p class="text-gray-200 text-sm mb-2 lg:mb-4">May 3, 2024</p>
-
-        <h2 class="text-xl font-bold lg:text-2xl">
-            LeetCode 35: Search Insert Position Solution in Go
-        </h2>
-    </a>
-</article><article
-    class="bg-black rounded-xl shadow-xl p-4 mb-4 lg:p-8 motion-reduce:transition-none transition-transform duration-1000 ease-in-out hover:scale-105">
-    <a href="https://busyasif.dev/posts/create-rest-api-with-go-gin-gorm-and-postgres/">
-        <p class="text-gray-200 text-sm mb-2 lg:mb-4">April 22, 2024</p>
-
-        <h2 class="text-xl font-bold lg:text-2xl">
-            Create Rest Api With Go Gin GORM and Postgres
-        </h2>
-    </a>
-</article><article
-    class="bg-black rounded-xl shadow-xl p-4 mb-4 lg:p-8 motion-reduce:transition-none transition-transform duration-1000 ease-in-out hover:scale-105">
-    <a href="https://busyasif.dev/posts/create-desktop-entry-for-an-app-on-linux/">
-        <p class="text-gray-200 text-sm mb-2 lg:mb-4">July 7, 2023</p>
-
-        <h2 class="text-xl font-bold lg:text-2xl">
-            How to create Desktop Entry for an App on Linux
-        </h2>
-    </a>
-</article><article
-    class="bg-black rounded-xl shadow-xl p-4 mb-4 lg:p-8 motion-reduce:transition-none transition-transform duration-1000 ease-in-out hover:scale-105">
-    <a href="https://busyasif.dev/posts/how-to-use-wxwidgets-with-visual-studio-2022/">
-        <p class="text-gray-200 text-sm mb-2 lg:mb-4">December 12, 2022</p>
-
-        <h2 class="text-xl font-bold lg:text-2xl">
-            How to Use wxWidgets with Visual Studio 2022
-        </h2>
-    </a>
-</article>
-
-    
-
-    
-  </div>
-</div>
-
 
     </div><footer class="p-4 mt-20">
     <p class="footer text-center">Copyright (c) 2024 Shivendra TechSter</p>

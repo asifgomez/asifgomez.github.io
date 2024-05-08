@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BinarySearch on Asif Ali</title>
+    <link>https://busyasif.dev/tags/binarysearch/</link>
+    <description>Recent content in BinarySearch on Asif Ali</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 03 May 2024 23:21:12 +0530</lastBuildDate>
+    <atom:link href="https://busyasif.dev/tags/binarysearch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LeetCode 35: Search Insert Position Solution in Go</title>
+      <link>https://busyasif.dev/posts/leetcode-35-search-insert-position-solution-in-go/</link>
+      <pubDate>Fri, 03 May 2024 23:21:12 +0530</pubDate>
+      <guid>https://busyasif.dev/posts/leetcode-35-search-insert-position-solution-in-go/</guid>
+      <description>In this post we&amp;rsquo;ll solve and discuss the LeetCode problem no. 35 - Search Insert Position. We&amp;rsquo;ll be using Go language.&#xA;The problem has the following description:&#xA;Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.&#xA;You must write an algorithm with O(log n) runtime complexity&amp;quot;</description>
+    </item>
+  </channel>
+</rss>
